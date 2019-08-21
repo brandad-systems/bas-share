@@ -1,0 +1,21 @@
+name: image_share
+description: Share to a specified package/appUrl
+version: 0.2.0
+author: Brandad Systems AG
+homepage: https://github.com/organizations/brandad-systems
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    androidPackage: de.brandad-systems.socialdear.image_share
+    pluginClass: ImageShareWrapper

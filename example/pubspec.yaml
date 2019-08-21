@@ -1,5 +1,5 @@
-name: bas_share_example
-description: Demonstrates how to use the bas_share plugin.
+name: image_share_example
+description: Demonstrates how to use the image_share plugin.
 publish_to: 'none'
 
 environment:
@@ -18,7 +18,8 @@ dev_dependencies:
     sdk: flutter
 
   image_share:
-    path: ../ #TODO
+    path: ../
+  image_picker: ^0.6.1+3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec

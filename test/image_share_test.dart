@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:image_share/image_share.dart';
 
 void main() {
-  const MethodChannel channel = MethodChannel('bas_share');
+  const MethodChannel channel = MethodChannel('de/brandad-systems/socialdear/image_share');
 
   setUp(() {
     channel.setMockMethodCallHandler((MethodCall methodCall) async {

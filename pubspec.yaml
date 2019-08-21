@@ -17,5 +17,5 @@ dev_dependencies:
 
 flutter:
   plugin:
-    androidPackage: de.brandad-systems.socialdear.image_share
+    androidPackage: de.brandad_systems.socialdear.image_share
     pluginClass: ImageShareWrapper

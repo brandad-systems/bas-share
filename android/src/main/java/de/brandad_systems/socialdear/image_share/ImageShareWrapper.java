@@ -1,4 +1,4 @@
-package de.brandad-systems.socialdear.image_share;
+package de.brandad_systems.socialdear.image_share;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -18,18 +18,18 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 import androidx.core.content.FileProvider;
 
 
-public class ImageShare implements MethodCallHandler {
+public class ImageShareWrapper implements MethodCallHandler {
     private static final String PATH = "path";
-    private static final  String ANDROID_ID = 'ANDROID_ID';
+    private static final  String ANDROID_ID = "ANDROID_ID";
     private final Registrar mRegistrar;
 
 
     public static void registerWith(Registrar registrar) {
         final MethodChannel channel = new MethodChannel(registrar.messenger(), "de/brandad-systems/socialdear/image_share");
-        channel.setMethodCallHandler(new ImageShare(registrar));
+        channel.setMethodCallHandler(new ImageShareWrapper(registrar));
     }
 
-    private BasSharePlugin(Registrar registrar) {
+    private ImageShareWrapper(Registrar registrar) {
         this.mRegistrar = registrar;
     }
 
@@ -63,7 +63,7 @@ public class ImageShare implements MethodCallHandler {
         shareIntent.setAction(Intent.ACTION_SEND);
 
         File newFile = new File(path);
-        Uri contentUri = FileProvider.getUriForFile(context, "de.brandad.socialdear.provider", newFile);
+        Uri contentUri = FileProvider.getUriForFile(context, "de.brandad_systems.socialdear.image_share.provider", newFile);
 
         shareIntent.putExtra(Intent.EXTRA_STREAM, contentUri);
         shareIntent.setType(TYPE);

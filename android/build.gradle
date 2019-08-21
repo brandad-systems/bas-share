@@ -1,4 +1,4 @@
-group 'de.brandad-systems.socialdear.image_share'
+group 'de.brandad_systems.socialdear.image_share'
 version '1.0-SNAPSHOT'
 
 buildscript {

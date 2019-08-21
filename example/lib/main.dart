@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:image_share/image_share.dart';
 
 void main() => runApp(MyApp());
@@ -20,10 +23,8 @@ class _MyAppState extends State<MyApp> {
           child: RaisedButton(
             child: const Text('click me'),
             onPressed: () async {
-              ImageShare.toInstagram(
-                      imageUrl:
-                          'https://www.socialdear.de/wp-content/uploads/2018/05/Logo-light-8-e1527258184644.png')
-                  .share();
+              final File selected = await ImagePicker.pickImage(source: ImageSource.gallery);
+              ImageShare.toInstagram(imageUrl: selected.path).share();
             },
           ),
         ),
